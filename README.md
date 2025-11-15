@@ -32,7 +32,23 @@ cd task_manager
 ```
 
 ## Run Options
-### Option 1: Run Normally (without Docker)
+### Option 1: Run with Docker Compose (Recommened)
+The project already includes a `docker-compose.yml` file. You **do not need to build anything** — the Docker image is public on Docker Hub.  
+
+To run the app:
+1. Make sure Docker and Docker Compose are installed. 
+2. In the project root, run:
+
+```bash
+docker-compose up -d
+```
+3. Access the API:
+- Swagger UI: http://localhost:8080/swagger-ui.html
+- API base URL: http://localhost:8080/api/tasks
+
+**Note:** H2 database is in-memory; data will be lost after each restart.
+
+### Option 2: Run Normally (without Docker)
 1. Build the project:
 
 ```bash
@@ -49,18 +65,3 @@ mvn spring-boot:run
 
 **Note:** H2 database is in-memory; data will be lost after each restart.
 
-### Option 2: Run with Docker Compose (H2 in-memory)
-The project already includes a `docker-compose.yml` file. You **do not need to build anything** — the Docker image is public on Docker Hub.  
-
-To run the app:
-1. Make sure Docker and Docker Compose are installed. 
-2. In the project root, run:
-
-```bash
-docker-compose up
-```
-3. Access the API:
-- Swagger UI: http://localhost:8080/swagger-ui.html
-- API base URL: http://localhost:8080/api/tasks
-
-**Note:** H2 database is in-memory; data will be lost after each restart.

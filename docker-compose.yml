@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  task-manager:
+    image: raed980/task-manager:1.0.0
+    container_name: task-manager
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
