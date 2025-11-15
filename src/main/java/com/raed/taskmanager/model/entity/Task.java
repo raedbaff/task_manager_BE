@@ -32,7 +32,7 @@ public class Task {
 
     @Column(length = 1000)
     private String description;
-
+    @Column(columnDefinition = "boolean default false")
     private boolean completed;
 
     @CreatedDate
